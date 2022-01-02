@@ -83,11 +83,12 @@ def my_function():
 print(my_function.__doc__)
 
 
-# динамическая типизация
+# динамическая типизация (хороше практикой в python является проверка типа аргумантов)
 def multiplay(number_1, number_2):
     print('Функцию вызвали с параметрами', number_1, number_2)
-    value = number_1 * number_2
-    return value
+    if isinstance(number_1, int):
+        value = number_1 * number_2
+        return value
 
 
 print(multiplay(number_1=42, number_2=27))
